@@ -1,0 +1,64 @@
+body {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a3550f60-aea0-416b-bb15-fe2b9103cac9/d8cac6x-8ec7df49-3724-431e-9e93-78fcd29a5052.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2EzNTUwZjYwLWFlYTAtNDE2Yi1iYjE1LWZlMmI5MTAzY2FjOVwvZDhjYWM2eC04ZWM3ZGY0OS0zNzI0LTQzMWUtOWU5My03OGZjZDI5YTUwNTIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZVPHMOOV1Yfdl0kxFoX4s3biF5f4TkrBpOZKHCaGAxE");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; 
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif; 
+    color: rgb(186, 9, 9);
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.instructions{
+    background-color: rgba(255,255,255,.5);
+    border-radius: 8px;
+    padding: 5px;
+    border:2px solid black;
+    text-align: center;
+
+}
+
+
+.playerchoice {
+    background-color: rgba(255,255,255,.5);
+    border-radius: 8px;
+    padding: 5px;
+    border:2px solid black;
+}
+
+.characterchoice{
+    background-color: rgba(255,255,255,.5);
+    border-radius: 8px;
+    padding: 5px;
+    border:2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+button{
+    background-color: rgb(186, 9, 9);
+    border-radius: 12px;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+.fight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

@@ -5,22 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FirstBloodSportCommando</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>FirstBloodSportCommando</h1>
     <div class="instructions">
-        <h2>In this two player fighting game, your goal is to lower your opponents health to zero! It's a fight to the death!</h2>
+        <h2>In this two player fighting game, your goal is to lower your opponents health to zero! <br>It's a fight to the death!</h2></br></h2>
+    </div>
+    <div class="playerchoice">
+        <h2>Each player needs to select their character.</h2>
+        <p class="player1">Player 1: </p>
+        <p class="player2">Player 2: </p>
     </div>
     <div class="characterchoice">
-        <h2>Each player needs to select their character.</h2>
-        <img class="rambo">
-        <button class="ramboButton">Bamro</button>
-        <img class="arnold">
-        <button class="arnoldButton">Commando</button>
-        <img class="jcvd">
-        <button class="jcvdButton">Van Dang</button>
+        <div class="ramboSelect">
+            <img class="rambo">
+            <button class="ramboButton">Bamro</button>
+        </div>
+        <div class="arnoldSelect">
+            <img class="arnold">
+            <button class="arnoldButton">Commando</button>
+        </div>
+        <div class="jcvdSelect">
+            <img class="jcvd">
+            <button class="jcvdButton">Van Dang</button>
+        </div>
     </div>
+    <button class="fight">Let's Fight!</button>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
