@@ -16,25 +16,33 @@
         <h2>In this two player fighting game, your goal is to lower your opponents health to zero! <br>It's a fight to the death!</h2></br></h2>
     </div>
     <div class="characterchoice">
+        <div class="player1selection playerchoice">
+            <p id="player1">Player 1: </p>
+            <button onclick="new playerOne('Van Dang')" class="jcvdButton">Van Dang</button>
+            <button onclick="new playerOne('Commando')" class="arnoldButton">Commando</button>
+            <button onclick="new playerOne('Bamro')" class="ramboButton">Bamro</button>
+        </div>
         <div class="ramboOption select">
             <img src = "images/RAmbo.png" class="rambo">
-            <button onclick="makePlayerOne('Bamro')" class="ramboButton">Bamro</button>
+            <h2>Bamro</h2>
         </div>
         <div class="arnoldOption select">
             <img src= "images/arnold.png"class="arnold">
-            <button onclick="makePlayerOne('Commando')" class="arnoldButton">Commando</button>
+            <h2>Commando</h2>
         </div>
         <div class="jcvdOption select">
             <img src="images/bloodsport.jpeg"class="jcvd">
-            <button onclick="makePlayerOne('Van Dang')" class="jcvdButton">Van Dang</button>
+            <h2>Van Dang</h2>
         </div>
-    </div>
-    <div class="playerchoice">
-        <h2>Each player needs to select their character.</h2>
-        <p id="player1">Player 1: </p>
-        <p id="player2">Player 2: </p>
+        <div class="player2selection playerchoice">
+            <p id="player2">Player 2: </p>
+            <button onclick="new playerTwo('Van Dang')" class="jcvdButton">Van Dang</button>
+            <button onclick="new playerTwo('Commando')">Commando</button>
+            <button onclick="new playerTwo('Bamro')" class="ramboButton">Bamro</button>
+        </div>
     </div>
     <button class="fight">Let's Fight!</button>
     <script type="text/javascript" src="js/app.js"></script>
+
 </body>
 </html>
