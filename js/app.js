@@ -9,8 +9,7 @@ class fighter {
         this.restore = 15
     }
 }
-
-    
+   
 //Create the charaters, as global variables
 let fighter1;
 let fighter2;
@@ -65,7 +64,7 @@ fighter1RamboButton.addEventListener("click", function (){
 const fighter2JCVDButton = document.querySelector(".jcvdButton2")
 console.log(fighter2JCVDButton)
 fighter2JCVDButton.addEventListener("click", function (){
-    createPlayerTwo("Rambo")
+    createPlayerTwo("Van Dang")
     fighter2pic.setAttribute("src", "images/bloodsport.jpeg")
 })
 
@@ -76,8 +75,9 @@ fighter2CommandoButton.addEventListener("click", function (){
     fighter2pic.setAttribute("src", "images/arnold.png")
 })
 const fighter2RamboButton = document.querySelector(".ramboButton2")
-console.log(fighter1RamboButton)
+console.log(fighter2RamboButton)
 fighter2RamboButton.addEventListener("click",function (){
+    createPlayerTwo("Bamro")
     fighter2pic.setAttribute("src", "images/RAmbo.png")
 })
 
@@ -85,14 +85,15 @@ fighter2RamboButton.addEventListener("click",function (){
 console.log(fighter1)
 console.log(fighter2)
 
-//Monitors turn taking should post to innerHTML the turn and start on click
+//Updates health after each turn and checks for win condition
+
 let counter = 0
 const checkHealth = () => {
     if(fighter1.health == 0){
         alert("Player 2 wins!")
         
     }else if(fighter2.health == 0){
-        alert("Player 2 wins!")
+        alert("Player 1 wins!")
         
     }else {
         player1health.setAttribute("value", fighter1.health)
@@ -101,16 +102,23 @@ const checkHealth = () => {
     }
 }
 //Monitors turn taking should post to innerHTML the turn and start on click
+const gameStart = document.querySelector(".fight")
+const turnTracker = document.querySelector(".turntracker")
+const body = document.querySelector("body")
 
 const gameTurns = () =>{
+
     if(counter % 2 == 0){
-        alert("It is player 1's turn")
+        turnTracker.innerHTML = "It is Player 1's turn!"
+
     
     } else{
-        alert("It is player 2's turn")
+        turnTracker.innerHTML = "It is Player 2's turn!"
+
      
     }
 }
+gameStart.addEventListener("click", gameTurns)
 
 
 //create functions for fighting options and event listeners
@@ -119,24 +127,44 @@ const gameTurns = () =>{
 //Player one actions
 const fighter1Attack = () => {
     if (Math.random(fighter1.accuracy)<=0.8){
-        fighter2.health = fighter2.health - 15
-        console.log(fighter1)
-        console.log(fighter2)
-    }else{
+        if(fighter2.health > 14){
+            fighter2.health = fighter2.health - 15
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+        if(fighter2.health <= 14){
+            fighter2.health = 0
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+    }else {
         alert("You missed")}
     checkHealth()
 }
 
 const fighter1Special = () => {
     if (Math.random(fighter1.accuracy)<=0.5){
-        fighter2.health = fighter2.health - 30
+        if(fighter2.health > 29){
+            fighter2.health = fighter2.health - 30
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+        else if(fighter2.health <= 29){
+            fighter2.health = 0
+            console.log(fighter1)
+            console.log(fighter2)
+        }
     }else {
         alert("You missed")}
     checkHealth()
 }
 
 const fighter1restore = () => {
-    fighter1.health=fighter1.health+15
+    if(fighter1.health > 95){
+        fighter1.health = 100
+    } else if(fighter1.health <= 95){
+        fighter1.health=fighter1.health +15
+    }
     checkHealth()
 }
 
@@ -144,19 +172,38 @@ const fighter1restore = () => {
 //create functions for play two actions 
 const fighter2Attack = () => {
     if (Math.random(fighter2.accuracy)<=0.8){
-        fighter1.health = fighter1.health - 15
-    }else {
+        if(fighter1.health > 14){
+            fighter1.health = fighter1.health - 15
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+        else if(fighter1.health <= 14){
+            fighter1.health = 0
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+    }else{
         alert("You missed")}
     checkHealth()
 }
 
 const fighter2Special = () => {
-    if (Math.random(fighter1.accuracy)<=0.5){
-        fighter1.health = fighter1.health - 30
+    if (Math.random(fighter2.accuracy)<=0.5){
+        if(fighter1.health > 29){
+            fighter1.health = fighter1.health - 30
+            console.log(fighter1)
+            console.log(fighter2)
+        }
+        else if(fighter1.health <= 29){
+            fighter1.health = 0
+            console.log(fighter1)
+            console.log(fighter2)
+        }
     }else {
         alert("You missed")}
     checkHealth()
 }
+
 
 const fighter2restore = () => {
     fighter2.health=fighter2.health+15
@@ -177,16 +224,16 @@ player1Restore.addEventListener("click", function () {
     }
 )
 
-player1Attack.addEventListener("click", function () {
-    fighter1Attack(fighter1, fighter2)}
+player2Attack.addEventListener("click", function () {
+    fighter2Attack(fighter1, fighter2)}
 )
 
-player1Special.addEventListener("click", function () {
-    fighter1Special(fighter1, fighter2)}
+player2Special.addEventListener("click", function () {
+    fighter2Special(fighter1, fighter2)}
 )
         
-player1Restore.addEventListener("click", function () {
-    fighter1restore(fighter1, fighter2)}
+player2Restore.addEventListener("click", function () {
+    fighter2restore(fighter1, fighter2)}
 )
 
 //Animation of images - adjust to sprites
