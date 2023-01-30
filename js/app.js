@@ -98,21 +98,21 @@ class VanDamme {
 }
 
 
-
 // Create a way that the image can be set with character selection
 let player1Pic = document.querySelector(".player1pic")
 let player2Pic = document.querySelector(".player2pic")
 
 
 
-
 //Create a function for adjusting health after each turn and check for win condition
 
 const checkHealth = () => {
-    if (player1Health = 0){
+    if (playerOne.health = 0){
         alert("Player 2 wins!")
-    } else if (player2Health = 0){
+        return
+    } else if (playerTwo.health = 0){
         alert("Player 1 wins")
+        return
     }
 }
 
@@ -121,15 +121,18 @@ const turns = () =>{
     let i = 0
     if (i == 0){
         alert("Player 1's turn! Select your character")
+        const playerOne = 
         i = i +1   
     } if (i == 1){
         alert("Player 2's turn! Select your character")
         i = i +1 
     }else if (i % 2 !=0){
         alert("Player 2's turn! Select your attack")
+        checkHealth()
         i = i +1  
     } else if (i % 2 == 0){
         alert("Player 1's turn! Select your attack")
+        checkHealth()
         i = i +1  
     }
 }
@@ -211,3 +214,4 @@ let player2Health = document.querySelector(".player2health")
 // p1special.addEventListener("click", playerTwo.special)
 // let p2restore = document.querySelector(".p1restore")
 // p1restore.addEventListener("click", playerTwo.restore) 
+
