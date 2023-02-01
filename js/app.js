@@ -38,6 +38,9 @@ const player1Restore = document.querySelector(".p1restore")
 const player2Attack = document.querySelector(".p2attack")
 const player2Special = document.querySelector(".p2special")
 const player2Restore = document.querySelector(".p2restore")
+const jcvdImage = document.querySelector(".jcvd")
+const arnoldImage = document.querySelector(".arnold")
+const ramboImage = document.querySelector(".rambo")
 //create event listeners based on clicks yhat will create the new characters.
 
 
@@ -46,12 +49,14 @@ const fighter1JCVDButton = document.querySelector(".jcvdButton1")
 console.log(fighter1JCVDButton)
 fighter1JCVDButton.addEventListener("click", function (){
     createPlayerOne("Van Dang")
+    jcvdImage.style.border ="2px solid blue"
     fighter1pic.setAttribute("src", "images/vanDammeAttack.png")
 })
 const fighter1CommandoButton = document.querySelector(".arnoldButton1")
 console.log(fighter1CommandoButton)
 fighter1CommandoButton.addEventListener("click",  function (){
     createPlayerOne("Commando")
+    arnoldImage.style.border ="2px solid blue"
     fighter1pic.setAttribute("src", "images/arnoldAttack.png")
 })
 
@@ -59,6 +64,7 @@ const fighter1RamboButton = document.querySelector(".ramboButton1")
 console.log(fighter1RamboButton)
 fighter1RamboButton.addEventListener("click", function (){
     createPlayerOne("Rambo")
+    ramboImage.style.border ="2px solid blue"
     fighter1pic.setAttribute("src", "images/RamboAttack.png")
 })
 
@@ -67,6 +73,7 @@ const fighter2JCVDButton = document.querySelector(".jcvdButton2")
 console.log(fighter2JCVDButton)
 fighter2JCVDButton.addEventListener("click", function (){
     createPlayerTwo("Van Dang")
+    jcvdImage.style.border ="2px solid red"
     fighter2pic.setAttribute("src", "images/vanDammeAttack.png")
 })
 
@@ -74,12 +81,14 @@ const fighter2CommandoButton = document.querySelector(".arnoldButton2")
 console.log(fighter2CommandoButton)
 fighter2CommandoButton.addEventListener("click", function (){
     createPlayerTwo("Commando")
+    arnoldImage.style.border ="2px solid red"
     fighter2pic.setAttribute("src", "images/arnoldAttack.png")
 })
 const fighter2RamboButton = document.querySelector(".ramboButton2")
 console.log(fighter2RamboButton)
 fighter2RamboButton.addEventListener("click",function (){
     createPlayerTwo("Bamro")
+    ramboImage.style.border ="2px solid red"
     fighter2pic.setAttribute("src", "images/RamboAttack.png")
 })
 
@@ -92,9 +101,13 @@ console.log(fighter2)
 let counter = 0
 const checkHealth = () => {
     if(fighter1.health == 0){
+        player1health.setAttribute("value", fighter1.health)
+        player2health.setAttribute("value", fighter2.health)
         alert("Player 2 wins!")
         
     }else if(fighter2.health == 0){
+        player1health.setAttribute("value", fighter1.health)
+        player2health.setAttribute("value", fighter2.health)
         alert("Player 1 wins!")
         
     }else {
@@ -132,7 +145,7 @@ const showGameBoard = () => {
           y.style.display = "block";
         }
 }
-      
+
 gameStart.addEventListener("click", initaiateGame)
 gameStart.addEventListener("click", showGameBoard)
 
