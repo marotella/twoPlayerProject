@@ -13,7 +13,7 @@
 <body>
     <h1>FirstBloodSportCommando</h1>
     <div class="instructions">
-        <h2>In this two player fighting game, your goal is to lower your opponents health to zero! <br>It's a fight to the death! Chooe your character!</h2></br></h2>
+        <h2>In this two player fighting game, your goal is to lower your opponents health to zero! <br>It's a fight to the death! Choose your character!</h2></br></h2>
     </div>
     <div class="characterchoice">
         <div class="player1selection playerchoice">
@@ -23,15 +23,15 @@
             <button class="ramboButton1">Bamro</button>
         </div>
         <div class="ramboOption select">
-            <img src = "images/RAmbo.png" class="rambo">
+            <img src = "images/RamboIdle.png" class="rambo">
             <h2>Bamro</h2>
         </div>
         <div class="arnoldOption select">
-            <img src= "images/arnold.png"class="arnold">
+            <img src= "images/arnoldIdle.png"class="arnold">
             <h2>Commando</h2>
         </div>
         <div class="jcvdOption select">
-            <img src="images/bloodsport.jpeg"class="jcvd">
+            <img src="images/vanDammeIdle.png"class="jcvd">
             <h2>Van Dang</h2>
         </div>
         <div class="player2selection playerchoice">
@@ -41,34 +41,38 @@
             <button class="ramboButton2">Bamro</button>
         </div>
     </div>
-    <button class="fight">Let's Fight!</button>
-    <div class ="turntracker"></div>
-    <div class="playerStats">
-        <div class="player1stats">
-            <progress min=0 max=100 value=100 id=health class="player1health"></progress>
-            <p>Player 1: </p>
-        </div>
-        <div class="player2stats">
-            <progress min=0 max=100 value=100 id=health class="player2health"></progress>
-            <p>Player 2: </p>
-        </div>
+    <div class="iniialize fight">
+        <button class="fight">Let's Fight!</button>
     </div>
-    <div class=gameBoard>
-        
-        <div class="player1Display">
-            <div class="player1Buttons">
-                <button class="player1button p1attack">Attack</button>
-                <button class="player1button p1special">Special Ability</button>
-                <button class="player1button p1restore">Restore</button>
+    <div class="arena">
+        <p class ="turntracker"></p>
+        <div class="playerStats">
+            <div class="player1stats">
+                <p>Player 1 Health: </p>
+                <progress min=0 max=100 value=100 id=health class="player1health"></progress>
+    
             </div>
-            <img src="" class="player1pic">
+            <div class="player2stats">
+                <p>Player 2 Health: </p>
+                <progress min=0 max=100 value=100 id=health class="player2health"></progress>
+            </div>
         </div>
-        <div class="player2Display">
-            <img src="" class="player2pic">
-            <div class="player2Buttons">
-                <button class="player2button p2attack">Attack</button>
-                <button class="player2button p2special">Special Ability</button>
-                <button class="player2button p2restore">Restore</button>
+        <div class="gameBoard">
+            <div class="player1Display">
+                <div class="player1Buttons">
+                    <button class="player1button p1attack">Attack</button>
+                    <button class="player1button p1special">Special Ability</button>
+                    <button class="player1button p1restore">Restore</button>
+                </div>
+                <img src="" class="player1pic">
+            </div>
+            <div class="player2Display">
+                <img src="" class="player2pic">
+                <div class="player2Buttons">
+                    <button class="player2button p2attack">Attack</button>
+                    <button class="player2button p2special">Special Ability</button>
+                    <button class="player2button p2restore">Restore</button>
+                </div>
             </div>
         </div>
     </div>
