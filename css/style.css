@@ -1,7 +1,7 @@
 body {
-    background-color:black;
+    background-image: url("https://img.craftpix.net/2020/02/Cave-Horizontal-Battle-Backgrounds3.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 275% 200%;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: rgb(111, 207, 52);
@@ -22,16 +22,17 @@ p{
     text-align: center;
 }
 .instructions{
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.7);
     border-radius: 8px;
     padding: 5px;
     border:2px solid black;
     text-align: center;
+    max-width:
 }
 
 
 .playerchoice {
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.7);
     border-radius: 8px;
     padding: 5px;
     border:2px solid black;
@@ -76,6 +77,7 @@ button{
 img{
     min-width: 200px;
     min-height: 200px;
+    border-radius: 8px;
 }
 
 
@@ -147,3 +149,4 @@ h1 {
     border: 0px solid black;
     border-radius: .8px;
 }
+
