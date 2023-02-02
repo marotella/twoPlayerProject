@@ -2,7 +2,7 @@
 class fighter {
     constructor (name){
         this.name=name
-        this.accuracy = .7
+        this.accuracy = .75
         this.health =100
         this.attack =15
         this.special = 30
@@ -27,76 +27,85 @@ function createPlayerOne(name) {
 
 }
 
-//create variables for each button
-const fighter1pic = document.querySelector(".player1pic")
+//create variables for each button or DOM element 
+
+//player image
+const fighter1pic = document.querySelector(".player1pic") 
 const fighter2pic =document.querySelector(".player2pic")
+//player health bars
 const player1health = document.querySelector(".player1health")
 const player2health = document.querySelector(".player2health")
+// player1 action buttons
 const player1Attack = document.querySelector(".p1attack")
 const player1Special = document.querySelector(".p1special")
 const player1Restore = document.querySelector(".p1restore")
+
+//player2 action buttons
 const player2Attack = document.querySelector(".p2attack")
 const player2Special = document.querySelector(".p2special")
 const player2Restore = document.querySelector(".p2restore")
+
+//character images
 const jcvdImage = document.querySelector(".jcvd")
 const arnoldImage = document.querySelector(".arnold")
 const ramboImage = document.querySelector(".rambo")
 //create event listeners based on clicks yhat will create the new characters.
 
 
-//Player one 
-const fighter1JCVDButton = document.querySelector(".jcvdButton1")
-console.log(fighter1JCVDButton)
-fighter1JCVDButton.addEventListener("click", function (){
+//Player one character creation
+const fighter1JCVD = document.querySelector(".jcvdButton1")
+
+fighter1JCVD.addEventListener("click", function (){
     createPlayerOne("Van Dang")
-    jcvdImage.style.border ="2px solid blue"
+    jcvdImage.style.border ="4px solid blue"
+    jcvdImage.style.borderRadius = "8px"
     fighter1pic.setAttribute("src", "images/vanDammeAttack.png")
 })
-const fighter1CommandoButton = document.querySelector(".arnoldButton1")
-console.log(fighter1CommandoButton)
-fighter1CommandoButton.addEventListener("click",  function (){
+const fighter1Commando = document.querySelector(".arnoldButton1")
+
+fighter1Commando.addEventListener("click",  function (){
     createPlayerOne("Commando")
-    arnoldImage.style.border ="2px solid blue"
+    arnoldImage.style.border ="4px solid blue"
+    arnoldImage.style.borderRadius = "8px"
     fighter1pic.setAttribute("src", "images/arnoldAttack.png")
 })
 
-const fighter1RamboButton = document.querySelector(".ramboButton1")
-console.log(fighter1RamboButton)
-fighter1RamboButton.addEventListener("click", function (){
+const fighter1Rambo = document.querySelector(".ramboButton1")
+
+fighter1Rambo.addEventListener("click", function (){
     createPlayerOne("Rambo")
-    ramboImage.style.border ="2px solid blue"
+    ramboImage.style.border ="4px solid blue"
+    ramboImage.style.borderRadius = "8px"
     fighter1pic.setAttribute("src", "images/RamboAttack.png")
 })
 
-//Player Two
-const fighter2JCVDButton = document.querySelector(".jcvdButton2")
-console.log(fighter2JCVDButton)
-fighter2JCVDButton.addEventListener("click", function (){
+//Player Two character creation
+const fighter2JCVD = document.querySelector(".jcvdButton2")
+fighter2JCVD.addEventListener("click", function (){
     createPlayerTwo("Van Dang")
-    jcvdImage.style.border ="2px solid red"
+    jcvdImage.style.border ="4px solid red"
+    jcvdImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/vanDammeAttack.png")
 })
 
-const fighter2CommandoButton = document.querySelector(".arnoldButton2")
-console.log(fighter2CommandoButton)
-fighter2CommandoButton.addEventListener("click", function (){
+const fighter2Commando = document.querySelector(".arnoldButton2")
+
+fighter2Commando.addEventListener("click", function (){
     createPlayerTwo("Commando")
-    arnoldImage.style.border ="2px solid red"
+    arnoldImage.style.border ="4px solid red"
+    arnoldImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/arnoldAttack.png")
 })
-const fighter2RamboButton = document.querySelector(".ramboButton2")
-console.log(fighter2RamboButton)
-fighter2RamboButton.addEventListener("click",function (){
+const fighter2Rambo = document.querySelector(".ramboButton2")
+fighter2Rambo.addEventListener("click",function (){
     createPlayerTwo("Bamro")
-    ramboImage.style.border ="2px solid red"
+    ramboImage.style.border ="4px solid red"
+    ramboImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/RamboAttack.png")
 })
 
 
-console.log(fighter1)
-console.log(fighter2)
-
-//Updates health after each turn and checks for win condition
+//Updates health after each turn and checks for win condition.
 
 let counter = 0
 const checkHealth = () => {
@@ -123,7 +132,7 @@ const checkHealth = () => {
         }
     }
 }
-//Monitors turn taking should post to innerHTML the turn and start on click
+//Controls the elements shown on the screen for a start screen and game screen 
 const gameStart = document.querySelector(".fight")
 const turnTracker = document.querySelector(".turntracker")
 const body = document.querySelector("body")
@@ -152,9 +161,9 @@ gameStart.addEventListener("click", showGameBoard)
 //create functions for fighting options and event listeners
 
 
-//Player one actions
+//Player one actions - attack, special attack with a larger effect but less accurate, and restore
 const fighter1Attack = () => {
-    if (Math.random(fighter1.accuracy)<=0.8){
+    if (Math.random(fighter1.accuracy)<=0.85){
         if(fighter2.health > 14){
             audioHit()
             fighter2.health = fighter2.health - 15
@@ -168,13 +177,13 @@ const fighter1Attack = () => {
             console.log(fighter2)
         }
     }else {
-        alert("You missed")
+        alert("Your attack missed!")
         miss.play()}
     checkHealth()
 }
 
 const fighter1Special = () => {
-    if (Math.random(fighter1.accuracy)<=0.5){
+    if (Math.random(fighter1.accuracy)<=0.6){
         if(fighter2.health > 29){
             audioSpecial()
             fighter2.health = fighter2.health - 30
@@ -188,7 +197,7 @@ const fighter1Special = () => {
             console.log(fighter2)
         }
     }else {
-        alert("You missed")
+        alert("Your special attack missed!")
         miss.play()}
     checkHealth()
 }
@@ -205,9 +214,9 @@ const fighter1restore = () => {
 }
 
 
-//create functions for play two actions 
+//Player one actions - attack, special attack with a larger effect but less accurate, and restore
 const fighter2Attack = () => {
-    if (Math.random(fighter2.accuracy)<=0.8){
+    if (Math.random(fighter2.accuracy)<=0.85){
         if(fighter1.health > 14){
             audioHit()
             fighter1.health = fighter1.health - 15
@@ -221,13 +230,13 @@ const fighter2Attack = () => {
             console.log(fighter2)
         }
     }else{
-        alert("You missed")
+        alert("Your attack missed!")
         miss.play()}
     checkHealth()
 }
 
 const fighter2Special = () => {
-    if (Math.random(fighter2.accuracy)<=0.5){
+    if (Math.random(fighter2.accuracy)<=0.6){
         if(fighter1.health > 29){
             audioSpecial()
             fighter1.health = fighter1.health - 30
@@ -241,7 +250,7 @@ const fighter2Special = () => {
             console.log(fighter2)
         }
     }else {
-        alert("You missed")
+        alert("Your special attack missed!")
         miss.play()}
     checkHealth()
 }
@@ -258,7 +267,7 @@ const fighter2restore = () => {
     checkHealth()
 }
 
-//Event listners for actions 
+//Event listners for player actions  
 player1Attack.addEventListener("click", function () {
     fighter1Attack(fighter1, fighter2)
     }
@@ -285,7 +294,7 @@ player2Restore.addEventListener("click", function () {
     fighter2restore(fighter1, fighter2)}
 )
 
-//Animation of images 
+//Animation of images in the game board
 setInterval(() => {
     const x = Math.floor(Math.random()* 10)
     const y = Math.floor(Math.random() * -4)
