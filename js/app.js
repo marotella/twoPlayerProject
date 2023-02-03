@@ -18,13 +18,10 @@ let fighter2;
 function createPlayerTwo(name) {
     audioSelect()
     fighter2 = new fighter(name)
-    console.log(fighter2)
 }
 function createPlayerOne(name) {
     audioSelect()
     fighter1 = new fighter(name)
-    console.log(fighter1)
-
 }
 
 //create variables for each button or DOM element 
@@ -167,18 +164,16 @@ const fighter1Attack = () => {
         if(fighter2.health > 14){
             audioHit()
             fighter2.health = fighter2.health - 15
-            console.log(fighter1)
-            console.log(fighter2)
+           
         }
         if(fighter2.health <= 14){
             audioHit()
             fighter2.health = 0
-            console.log(fighter1)
-            console.log(fighter2)
+            
         }
     }else {
         alert("Your attack missed!")
-        miss.play()}
+        audioMiss()}
     checkHealth()
 }
 
@@ -187,18 +182,15 @@ const fighter1Special = () => {
         if(fighter2.health > 29){
             audioSpecial()
             fighter2.health = fighter2.health - 30
-            console.log(fighter1)
-            console.log(fighter2)
+            
         }
         else if(fighter2.health <= 29){
             fighter2.health = 0
             audioSpecial()
-            console.log(fighter1)
-            console.log(fighter2)
         }
     }else {
         alert("Your special attack missed!")
-        miss.play()}
+        audioMiss()}
     checkHealth()
 }
 
@@ -220,18 +212,14 @@ const fighter2Attack = () => {
         if(fighter1.health > 14){
             audioHit()
             fighter1.health = fighter1.health - 15
-            console.log(fighter1)
-            console.log(fighter2)
         }
         else if(fighter1.health <= 14){
             audioHit()
             fighter1.health = 0
-            console.log(fighter1)
-            console.log(fighter2)
         }
     }else{
         alert("Your attack missed!")
-        miss.play()}
+        audioMiss()}
     checkHealth()
 }
 
@@ -240,18 +228,14 @@ const fighter2Special = () => {
         if(fighter1.health > 29){
             audioSpecial()
             fighter1.health = fighter1.health - 30
-            console.log(fighter1)
-            console.log(fighter2)
         }
         else if(fighter1.health <= 29){
             fighter1.health = 0
             audioSpecial()
-            console.log(fighter1)
-            console.log(fighter2)
         }
     }else {
         alert("Your special attack missed!")
-        miss.play()}
+        audioMiss()}
     checkHealth()
 }
 
