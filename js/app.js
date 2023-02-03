@@ -56,7 +56,7 @@ fighter1JCVD.addEventListener("click", function (){
     createPlayerOne("Van Dang")
     jcvdImage.style.border ="4px solid blue"
     jcvdImage.style.borderRadius = "8px"
-    fighter1pic.setAttribute("src", "images/vanDammeAttack.png")
+    fighter1pic.setAttribute("src", "images/vanDammeIdle.png")
 })
 const fighter1Commando = document.querySelector(".arnoldButton1")
 
@@ -82,7 +82,7 @@ fighter2JCVD.addEventListener("click", function (){
     createPlayerTwo("Van Dang")
     jcvdImage.style.border ="4px solid red"
     jcvdImage.style.borderRadius = "8px"
-    fighter2pic.setAttribute("src", "images/vanDammeAttack.png")
+    fighter2pic.setAttribute("src", "images/vanDammeIdle.png")
 })
 
 const fighter2Commando = document.querySelector(".arnoldButton2")
