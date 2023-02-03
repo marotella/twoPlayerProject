@@ -2,7 +2,7 @@
 class fighter {
     constructor (name){
         this.name=name
-        this.accuracy = .75
+        this.accuracy = .75  //used to determine hit or miss for attack options 
         this.health =100
         this.attack =15
         this.special = 30
@@ -26,23 +26,23 @@ function createPlayerOne(name) {
 
 //create variables for each button or DOM element 
 
-//player image
+//Sets a variable for player images to be used in the game board
 const fighter1pic = document.querySelector(".player1pic") 
 const fighter2pic =document.querySelector(".player2pic")
-//player health bars
+//Sets a variable to track player health throughout the game 
 const player1health = document.querySelector(".player1health")
 const player2health = document.querySelector(".player2health")
-// player1 action buttons
+// Sets a variable for each of player1's action buttons in the game board
 const player1Attack = document.querySelector(".p1attack")
 const player1Special = document.querySelector(".p1special")
 const player1Restore = document.querySelector(".p1restore")
 
-//player2 action buttons
+//Sets a variable for each of player2's action buttons in the game board
 const player2Attack = document.querySelector(".p2attack")
 const player2Special = document.querySelector(".p2special")
 const player2Restore = document.querySelector(".p2restore")
 
-//character images
+//Sets a variable for each of the images in the character selection
 const jcvdImage = document.querySelector(".jcvd")
 const arnoldImage = document.querySelector(".arnold")
 const ramboImage = document.querySelector(".rambo")
@@ -50,28 +50,36 @@ const ramboImage = document.querySelector(".rambo")
 
 
 //Player one character creation
+
+//create a variable for the the selection of JCVD character button
 const fighter1JCVD = document.querySelector(".jcvdButton1")
 
+//Function assigns the character for player 1 and creates a class to play as Van Damme
 fighter1JCVD.addEventListener("click", function (){
     createPlayerOne("Van Dang")
-    jcvdImage.style.border ="4px solid blue"
+    jcvdImage.style.border ="4px solid blue" // adds a border around the players choice
     jcvdImage.style.borderRadius = "8px"
-    fighter1pic.setAttribute("src", "images/vanDammeIdle.png")
+    fighter1pic.setAttribute("src", "images/vanDammeIdle.png") //populates the players character image in the game board.
 })
+
+//creates a variable for the selection of the arnold character
 const fighter1Commando = document.querySelector(".arnoldButton1")
 
+// function runs on click for character 1 choice and instatiates the class for player 1 as commando
 fighter1Commando.addEventListener("click",  function (){
     createPlayerOne("Commando")
-    arnoldImage.style.border ="4px solid blue"
+    arnoldImage.style.border ="4px solid blue" //adds a border to show character selection
     arnoldImage.style.borderRadius = "8px"
-    fighter1pic.setAttribute("src", "images/arnoldAttack.png")
+    fighter1pic.setAttribute("src", "images/arnoldAttack.png") //sets the players image in the gameboard
 })
 
+// creates a varaible for calling 
 const fighter1Rambo = document.querySelector(".ramboButton1")
 
+// function runs on click for character 1 choice and instatiates the class for player 1 as Rambo
 fighter1Rambo.addEventListener("click", function (){
     createPlayerOne("Rambo")
-    ramboImage.style.border ="4px solid blue"
+    ramboImage.style.border ="4px solid blue" //adds a border to show character selection
     ramboImage.style.borderRadius = "8px"
     fighter1pic.setAttribute("src", "images/RamboAttack.png")
 })
@@ -80,7 +88,7 @@ fighter1Rambo.addEventListener("click", function (){
 const fighter2JCVD = document.querySelector(".jcvdButton2")
 fighter2JCVD.addEventListener("click", function (){
     createPlayerTwo("Van Dang")
-    jcvdImage.style.border ="4px solid red"
+    jcvdImage.style.border ="4px solid red" //adds a border to show character selection
     jcvdImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/vanDammeIdle.png")
 })
@@ -89,14 +97,14 @@ const fighter2Commando = document.querySelector(".arnoldButton2")
 
 fighter2Commando.addEventListener("click", function (){
     createPlayerTwo("Commando")
-    arnoldImage.style.border ="4px solid red"
+    arnoldImage.style.border ="4px solid red" //adds a border to show character selection
     arnoldImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/arnoldAttack.png")
 })
 const fighter2Rambo = document.querySelector(".ramboButton2")
 fighter2Rambo.addEventListener("click",function (){
     createPlayerTwo("Bamro")
-    ramboImage.style.border ="4px solid red"
+    ramboImage.style.border ="4px solid red" //adds a border to show character selection
     ramboImage.style.borderRadius = "8px"
     fighter2pic.setAttribute("src", "images/RamboAttack.png")
 })
@@ -109,11 +117,16 @@ const checkHealth = () => {
     if(fighter1.health == 0){
         player1health.setAttribute("value", fighter1.health)
         player2health.setAttribute("value", fighter2.health)
+        audioWin()
+        turnTracker.innerHTML = "Player 2 wins! Refresh to replay"
         alert("Player 2 wins!")
+        
         
     }else if(fighter2.health == 0){
         player1health.setAttribute("value", fighter1.health)
         player2health.setAttribute("value", fighter2.health)
+        audioWin()
+        turnTracker.innerHTML = "Player 1 wins! Refresh to replay"
         alert("Player 1 wins!")
         
     }else {
